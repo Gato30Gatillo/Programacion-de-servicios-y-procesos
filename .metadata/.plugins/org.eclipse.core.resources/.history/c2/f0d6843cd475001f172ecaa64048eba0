@@ -1,0 +1,25 @@
+package ejercicios;
+
+public class sopaDeLetras {
+
+	private int N;
+	private String matriz[][];
+	
+	
+	
+	public sopaDeLetras(int n, String[][] matriz) {
+		super();
+		if (N <= 0) {
+            throw new IllegalArgumentException("El tamaño de la sopa de letras debe ser mayor que cero.");
+        }
+		N = n;
+		this.matriz = new String[N][N];
+	}
+
+
+
+	public static void main(String[] args) {
+
+	}
+
+}

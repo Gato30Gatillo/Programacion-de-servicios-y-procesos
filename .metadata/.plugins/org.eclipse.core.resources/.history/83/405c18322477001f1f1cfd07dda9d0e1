@@ -1,0 +1,65 @@
+package ejercicios;
+
+public class Ticket implements Iticket {
+
+	private int kilometroEntrada;
+	private double precioKilometro;
+	private int kilometroSalida;
+	private double precioTotal;
+	
+	public Ticket(int kilometroEntrada, double precioKilometro, int kilometroSalida) {
+		super();
+		this.kilometroEntrada = kilometroEntrada;
+		this.precioKilometro = precioKilometro;
+		this.kilometroSalida = kilometroSalida;
+		this.precioTotal = calcularPrecio(kilometroEntrada,kilometroSalida,precioKilometro);
+	}
+	
+	
+
+	public int getKilometroEntrada() {
+		return kilometroEntrada;
+	}
+
+
+
+	public void setKilometroEntrada(int kilometroEntrada) {
+		this.kilometroEntrada = kilometroEntrada;
+	}
+
+
+
+	public double getPrecioKilometro() {
+		return precioKilometro;
+	}
+
+
+
+	public void setPrecioKilometro(double precioKilometro) {
+		this.precioKilometro = precioKilometro;
+	}
+
+
+
+	public int getKilometroSalida() {
+		return kilometroSalida;
+	}
+
+
+
+	public void setKilometroSalida(int kilometroSalida) {
+		this.kilometroSalida = kilometroSalida;
+	}
+
+
+
+	@Override
+	public double calcularPrecio(int kilometroEntrada, int kilometroSalida, double precioKilometro) {
+		
+		return 0;
+	}
+	
+	
+	
+	
+}

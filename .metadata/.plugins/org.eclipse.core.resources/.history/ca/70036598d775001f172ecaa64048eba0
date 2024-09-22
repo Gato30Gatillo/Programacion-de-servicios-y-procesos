@@ -1,0 +1,63 @@
+package ejercicios;
+
+public class SopaDeLetras {
+
+	private int n;
+	private char[][] matriz;
+	
+	
+	
+	public SopaDeLetras(int n) {
+		super();
+		if (n <= 0) {
+            throw new IllegalArgumentException("El tamaño debe de ser mayor que cero");
+        }
+		this.n = n;
+		this.matriz = new char[n][n];
+		 inicializarMatriz();
+    }
+
+    private void inicializarMatriz() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matriz[i][j] = '*';
+            }
+        }
+    }
+    
+    public void colocarPalabraHorizontal(String palabra, Coordenada coordenada) {
+    	if(palabra.length()+coordenada.getColumna()>this.n) {
+    		throw new IllegalArgumentException("La palabra es demasiado grande para caber en la sopa de letras");
+    	}
+    	if(coordenada.getColumna()<0 || coordenada.getFila()<0) {
+    		throw new IllegalArgumentException("las coordenadas deben ser mayores que 0");
+    	}
+    	if(coordenada.getColumna()>n || coordenada.getFila()>n) {
+    		throw new IllegalArgumentException("las coordenadas son mayores que la matriz");
+    	}
+    	for (int i = 0; i < palabra.length(); i++) {
+            matriz[coordenada.getFila()][coordenada.getColumna() + i] = palabra.charAt(i);
+        }
+    }
+    public void colocarPalabraVertical(String palabra, Coordenada coordenada) {
+    	if(palabra.length()+coordenada.getFila()>this.n) {
+    		throw new IllegalArgumentException("La palabra es demasiado grande para caber en la sopa de letras");
+    	}
+    	if(coordenada.getColumna()<0 || coordenada.getColumna()<0) {
+    		throw new IllegalArgumentException("las coordenadas deben ser mayores que 0");
+    	}
+    	if(coordenada.getColumna()>n || coordenada.getColumna()>n) {
+    		throw new IllegalArgumentException("las coordenadas son mayores que la matriz");
+    	}
+    	for (int i = 0; i < palabra.length(); i++) {
+            matriz[coordenada.getFila()+i][coordenada.getColumna()] = palabra.charAt(i);
+        }
+    }
+
+
+
+	public static void main(String[] args) {
+
+	}
+
+}

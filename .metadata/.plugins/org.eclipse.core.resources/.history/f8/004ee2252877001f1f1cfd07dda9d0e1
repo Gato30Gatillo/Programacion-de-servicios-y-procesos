@@ -1,0 +1,34 @@
+package ejercicios;
+
+public class TicketGeneral extends Ticket {
+	
+	private double descuento;
+	private double precioTotal;
+	
+	public TicketGeneral(int kilometroEntrada, double precioKilometro, int kilometroSalida) {
+		super(kilometroEntrada, precioKilometro, kilometroSalida);
+		
+		this.descuento=calcularDescuento();
+		this.precioTotal=calcularPrecio();
+	}
+
+	private double calcularDescuento() {
+		
+		int kilometrosRecorridos=kilometrosRecorridos();
+		if(kilometrosRecorridos>500) {
+		return kilometrosRecorridos/500*0.1;
+		}
+		else {
+			return 0;
+		}
+		
+	}
+
+	@Override
+	public double calcularPrecio() {
+		int kilometrosRecorridos=kilometrosRecorridos();
+		
+		return (kilometrosRecorridos*precioKilometro)-(kilometrosRecorridos*precioKilometro)*this.descuento;
+	}
+	
+}

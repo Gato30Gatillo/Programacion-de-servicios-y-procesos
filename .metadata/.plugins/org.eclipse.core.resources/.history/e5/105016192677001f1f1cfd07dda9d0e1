@@ -1,0 +1,99 @@
+package ejercicios;
+
+import java.util.Objects;
+
+public  abstract class Ticket implements Iticket {
+
+	private int kilometroEntrada;
+	private double precioKilometro;
+	private int kilometroSalida;
+	private double precioTotal;
+	
+	public Ticket(int kilometroEntrada, double precioKilometro, int kilometroSalida) {
+		super();
+		this.kilometroEntrada = kilometroEntrada;
+		this.precioKilometro = precioKilometro;
+		this.kilometroSalida = kilometroSalida;
+		this.precioTotal = calcularPrecio(kilometroEntrada,kilometroSalida,precioKilometro);
+	}
+	
+	
+
+	public int getKilometroEntrada() {
+		return kilometroEntrada;
+	}
+
+
+
+	public void setKilometroEntrada(int kilometroEntrada) {
+		this.kilometroEntrada = kilometroEntrada;
+	}
+
+
+
+	public double getPrecioKilometro() {
+		return precioKilometro;
+	}
+
+
+
+	public void setPrecioKilometro(double precioKilometro) {
+		this.precioKilometro = precioKilometro;
+	}
+
+
+
+	public int getKilometroSalida() {
+		return kilometroSalida;
+	}
+
+
+
+	public void setKilometroSalida(int kilometroSalida) {
+		this.kilometroSalida = kilometroSalida;
+	}
+
+
+
+	@Override
+	public double calcularPrecio(int kilometroEntrada, int kilometroSalida, double precioKilometro) {
+		
+		return (kilometroSalida-kilometroEntrada)*precioKilometro;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Ticket [kilometroEntrada=" + kilometroEntrada + ", precioKilometro=" + precioKilometro
+				+ ", kilometroSalida=" + kilometroSalida + ", precioTotal=" + precioTotal + "]";
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(kilometroEntrada, kilometroSalida, precioKilometro, precioTotal);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Ticket other = (Ticket) obj;
+		return kilometroEntrada == other.kilometroEntrada && kilometroSalida == other.kilometroSalida
+				&& Double.doubleToLongBits(precioKilometro) == Double.doubleToLongBits(other.precioKilometro)
+				&& Double.doubleToLongBits(precioTotal) == Double.doubleToLongBits(other.precioTotal);
+	}
+	
+	
+	
+	
+	
+}

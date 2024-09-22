@@ -1,0 +1,8 @@
+package ejercicios;
+
+public interface Iticket {
+
+	
+	public double calcularPrecio(int kilometroEntrada, int kilometroSalida);
+	
+}

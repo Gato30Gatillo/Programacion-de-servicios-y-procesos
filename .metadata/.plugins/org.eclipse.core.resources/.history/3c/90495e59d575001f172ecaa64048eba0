@@ -1,0 +1,9 @@
+package ejercicios;
+class Coordenada {
+    int fila, columna;
+    
+    public Coordenada(int fila, int columna) {
+        this.fila = fila;
+        this.columna = columna;
+    }
+}

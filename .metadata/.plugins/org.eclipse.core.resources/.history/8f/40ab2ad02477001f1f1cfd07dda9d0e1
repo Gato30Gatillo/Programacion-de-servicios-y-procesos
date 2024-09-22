@@ -1,0 +1,8 @@
+package ejercicios;
+
+public class TicketGeneral extends Ticket {
+	
+	private boolean descuento;
+	final double porcentaje=0.05;
+
+}

@@ -1,0 +1,24 @@
+package ejercicios;
+
+public class TicketGeneral extends Ticket {
+	
+	private double descuento;
+	
+	public TicketGeneral(int kilometroEntrada, double precioKilometro, int kilometroSalida) {
+		super(kilometroEntrada, precioKilometro, kilometroSalida);
+		
+		this.descuento=calcularDescuento(kilometroEntrada,kilometroSalida);
+		
+	}
+
+	private double calcularDescuento(int kilometroEntrada, int kilometroSalida) {
+		
+		
+		return kilometroSalida;
+		
+	}
+
+
+	
+	
+}

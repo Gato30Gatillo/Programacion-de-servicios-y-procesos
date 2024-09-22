@@ -1,0 +1,28 @@
+package ejercicios;
+
+public class TicketGeneral extends Ticket {
+	
+	private boolean descuento;
+	final double porcentaje=0.05;
+	
+	public TicketGeneral(int kilometroEntrada, double precioKilometro, int kilometroSalida) {
+		super(kilometroEntrada, precioKilometro, kilometroSalida);
+		
+		this.descuento=tieneDescuento(kilometroEntrada,kilometroSalida);
+		
+	}
+
+	private boolean tieneDescuento(int kilometroEntrada, int kilometroSalida) {
+
+		if(kilometroSalida-kilometroEntrada==500) {
+		return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
+	
+	
+}
